@@ -6,14 +6,14 @@ File Explaining:
 DATABASE_INFO = {
     "DATABASE_NAME": "postgres",
     "DATABASE_USER_NAME": "postgres",
-    "DATABASE_PASSWORD": "*** Your Database Password ***",
+    "DATABASE_PASSWORD": "postgresql090816",
     "DATABASE_HOST": "localhost",
 }
 
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_SSL_PORT = 587
-SENDER_EMAIL_ADDRESS = "*** Your E-mail ***"
-PASSWORD_SENDER_EMAIL = "*** Your E-mail Password **"
+SENDER_EMAIL_ADDRESS = "omerdemirarsln@gmail.com"
+PASSWORD_SENDER_EMAIL = "Omersabina090816"
 
 VERIFICATION_MESSAGE = "Hello Dear {name} {surname} \n *** WELCOME TO YOUR NEW FAMILY *** \n " \
           "You Can Use This Code For Creation Profile \n Verification Code: {verification_code} \n " \
