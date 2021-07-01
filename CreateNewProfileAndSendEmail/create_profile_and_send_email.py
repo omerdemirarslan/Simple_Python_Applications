@@ -116,3 +116,4 @@ class CreatUserProfile:
 new_user_1 = CreatUserProfile()
 new_user_1.get_control_user_info()
 new_user_1.create_new_user()
+
