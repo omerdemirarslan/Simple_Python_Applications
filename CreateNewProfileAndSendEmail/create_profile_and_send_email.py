@@ -1,4 +1,7 @@
-""" Class and Method File """
+"""
+File Explaining:
+    Class and Method File
+"""
 import logging
 import random
 import smtplib
@@ -8,7 +11,6 @@ from cameralyze.helpers.database.postgre import DBHelper
 from configs import *
 
 logger = logging.getLogger(__name__)
-context = ssl.create_default_context()
 
 
 class CreatUserProfile:
@@ -46,8 +48,7 @@ class CreatUserProfile:
         try:
             server = smtplib.SMTP(SMTP_SERVER, SMTP_SSL_PORT)
             server.ehlo()
-            server.starttls(context=context)
-            server.ehlo()
+            server.starttls(context=self.context)
             server.login(SENDER_EMAIL_ADDRESS, PASSWORD_SENDER_EMAIL)
             server.sendmail(SENDER_EMAIL_ADDRESS, user_mail, message)
 
@@ -103,6 +104,7 @@ class CreatUserProfile:
             try:
                 params = tuple(self.user_info[:4])
                 self.database_connection.execute(USERS_TABLE_INSERT_QUERY, params)
+                self.database_connection.fetchone()
 
                 return SUCCESSFUL_USER_CREATION
             except Exception:
@@ -114,3 +116,4 @@ class CreatUserProfile:
 new_user_1 = CreatUserProfile()
 new_user_1.get_control_user_info()
 new_user_1.create_new_user()
+
